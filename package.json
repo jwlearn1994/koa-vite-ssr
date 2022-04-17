@@ -1,0 +1,29 @@
+{
+  "name": "koa-vite-ssr",
+  "private": true,
+  "version": "0.0.0",
+  "author": "johnnywang",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "concurrently 'yarn build:client' 'yarn build:server'",
+    "build:client": "vite build --ssrManifest --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
+    "serve": "node server/dev.js",
+    "start": "node server/prod.js"
+  },
+  "dependencies": {
+    "pinia": "^2.0.13",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@nuxt/devalue": "^2.0.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "concurrently": "^7.1.0",
+    "koa": "^2.13.4",
+    "koa-connect": "^2.1.0",
+    "koa-send": "^5.0.1",
+    "vite": "^2.9.2"
+  }
+}
